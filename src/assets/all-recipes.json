@@ -1,0 +1,5 @@
+[
+  {"title": "temp-1", "rcpCategory": "RecipeCategory.BREAKFAST", "image": "assets/imgs/placeholder.png", "desc": "desc-1"},
+  {"title": "temp-2", "rcpCategory": "RecipeCategory.BREAKFAST", "image": "", "desc": "desc-2"}
+
+]

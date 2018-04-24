@@ -1,0 +1,8 @@
+.mainContainer {
+  min-height: 100%;
+  height: 700px;
+}
+.recipeList {
+  max-width: 30%;
+  height: inherit;
+}

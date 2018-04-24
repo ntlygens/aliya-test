@@ -1,0 +1,23 @@
+<mat-drawer-container class='mainContainer'>
+  <!-- sidenav content -->
+  <mat-drawer class='recipeList' #rcpelist mode='side' position='end'>
+    <p>this is side content</p>
+    <mat-nav-list>
+      <amm-recipe
+        [ngClass]=''
+        *ngFor='let recipe of recipes; let idx=index;'
+        [rcpeTitle]='recipe.title'
+        [rcpeImg]='recipe.img'
+        [rcpeDesc]='recipe.desc'
+      ></amm-recipe>
+      <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
+    </mat-nav-list>
+  </mat-drawer>
+  <!-- sidenav end -->
+  <!-- main page content -->
+  <mat-drawer-content>
+    <p>this is main content</p>
+    <button class='btn' (click)='rcpelist.toggle()'>submitt</button>
+  </mat-drawer-content>
+</mat-drawer-container>
+
