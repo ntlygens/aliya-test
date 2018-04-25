@@ -1,8 +1,7 @@
 <mat-drawer-container class='mainContainer'>
   <!-- sidenav content -->
-  <mat-drawer class='recipeList' #rcpelist mode='side' position='end'>
-    <p>this is side content</p>
-    <mat-nav-list>
+  <mat-drawer class='recipeList' #rcpelist mode='over' position='end'>
+    <mat-nav-list class='text-center mt-3'>
       <input type='search' [(ngModel)]='searchText' placeholder='search here'>
       <amm-category
         *ngFor='let cat of categories | category: searchText'
@@ -13,10 +12,9 @@
   </mat-drawer>
   <!-- sidenav end -->
   <!-- main page content -->
-  <mat-drawer-content>
-    <p>this is main content</p>
+  <mat-drawer-content class='card-deck'>
     <amm-recipe
-        class=''
+        style='max-width: 200px'
         [ngClass]=''
         *ngFor='let recipe of recipes; let idx=index;'
         [rcpeTitle]='recipe.title'

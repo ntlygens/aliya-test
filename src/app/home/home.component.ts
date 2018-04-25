@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Pipe } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, Pipe } from '@angular/core';
 import { RecipeService } from '../recipe/recipe.service';
 import { HomeService } from './home.service';
 import { RecipeCategory } from '../recipe/recipe.enum';
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
   selector: 'amm-home',
   templateUrl: './home.component.html',
   providers: [ RecipeService, HomeService ],
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./home.component.css']
 })
 

@@ -4,7 +4,7 @@ import { isUndefined } from 'util';
 @Component({
   selector: 'amm-recipe',
   template: `
-    <mat-card class="rcpeCard">
+    <mat-card class="rcpeCard" >
       <mat-card-header>
         <mat-card-title *ngIf='hasTitle'>{{rcpeTitle}}</mat-card-title>
         <mat-card-title *ngIf='!hasTitle'>{{rcpeTitle}}</mat-card-title>
@@ -29,10 +29,23 @@ import { isUndefined } from 'util';
         <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
+    
   `,
   styles: [`
+    .mat-drawer-backdrop.mat-drawer-backdrop-shown{
+      /*background-color: transparent !important;*/
+      visibility: hidden !important;
+
+    }
+    .rcpeCard {
+      margin: 5px;
+      width: fit-content;
+      float: left;
+    }
     .user-img {
-      width: 60%;
+      width: 80px;
+      max-width: 100%;
+      margin: auto;
     }
   `]
 })
