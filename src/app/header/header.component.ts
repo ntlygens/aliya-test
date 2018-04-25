@@ -20,7 +20,7 @@ import { RecipeService } from '../recipe/recipe.service';
       <span class='my-spacer'></span>
       <div class='align-content-end'>
         <a href='#' class=''><mat-icon class=''>list</mat-icon></a>
-        <a href='#' class=''><mat-icon class=''>add</mat-icon></a>
+        <a href='#' class=''(click)='addRecipe()' ><mat-icon class=''>add</mat-icon></a>
         <a href='#' class='' (click)='showSideBar()'><mat-icon>menu</mat-icon></a>
       </div>
     </mat-toolbar>
@@ -54,6 +54,10 @@ export class HeaderComponent implements OnInit {
       const state = res.state;
       console.log('st: ' + state);
     });
+  }
+
+  addRecipe( ): any {
+
   }
 
 }

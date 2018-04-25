@@ -22,6 +22,10 @@ export class RecipeService {
     this.selectedDrawerState.next(isOpen);
   }
 
+  addNewRecipe(data: FormData) {
+    
+  }
+
   getDrawerState(): any {
     return this.isDrawerOpen$;
   }
