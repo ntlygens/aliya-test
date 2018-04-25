@@ -7,7 +7,8 @@ import { isUndefined } from 'util';
     <mat-card class="rcpeCard">
       <mat-card-header>
         <mat-card-title *ngIf='hasTitle'>{{rcpeTitle}}</mat-card-title>
-        <mat-card-title *ngIf='!hasTitle'>Default Title</mat-card-title>
+        <mat-card-title *ngIf='!hasTitle'>{{rcpeTitle}}</mat-card-title>
+        <mat-card-subtitle>{{rcpeCat}}</mat-card-subtitle>
       </mat-card-header>
       <div class='user-img'>
         <!--<div #rcpeImage><ng-content select='mat-nav-list-item'></ng-content></div>-->
@@ -40,6 +41,7 @@ export class RecipeComponent implements OnInit {
   @Input() rcpeTitle: string;
   @Input() rcpeImg: string;
   @Input() rcpeDesc: string;
+  @Input() rcpeCat: any;
   // @Input() rcpeLike: string;
   // @Input() rcpeShare: string;
 

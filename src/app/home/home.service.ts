@@ -20,7 +20,7 @@ export class HomeService {
     return this.isObservable$;
   }
 
-  getCategories() {
+  getAllCategories() {
     const tempCats = [];
     Object.keys(RecipeCategory)
       .forEach((key, i) => {
@@ -31,6 +31,11 @@ export class HomeService {
         }
       });
     return tempCats;
+  }
+
+  getCategoryItems(cat: RecipeCategory) {
+
+    return ;
   }
 
 }

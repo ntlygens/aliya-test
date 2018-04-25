@@ -23,7 +23,7 @@ export class RecipeService {
   }
 
   addNewRecipe(data: FormData) {
-    
+
   }
 
   getDrawerState(): any {

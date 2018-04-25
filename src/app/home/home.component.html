@@ -8,13 +8,6 @@
         *ngFor='let cat of categories | category: searchText'
         [catName]='cat'
       ></amm-category>
-      <!--<amm-recipe
-        [ngClass]=''
-        *ngFor='let recipe of categories; let idx=index;'
-        [rcpeTitle]='recipe.title'
-        [rcpeImg]='recipe.img'
-        [rcpeDesc]='recipe.desc'
-      ></amm-recipe>-->
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
     </mat-nav-list>
   </mat-drawer>
@@ -22,6 +15,15 @@
   <!-- main page content -->
   <mat-drawer-content>
     <p>this is main content</p>
+    <amm-recipe
+        class=''
+        [ngClass]=''
+        *ngFor='let recipe of recipes; let idx=index;'
+        [rcpeTitle]='recipe.title'
+        [rcpeImg]='recipe.img'
+        [rcpeDesc]='recipe.desc'
+        [rcpeCat]='recipe.rcpCategory'
+      ></amm-recipe>
     <button class='btn' (click)='rcpelist.toggle()'>submitt</button>
   </mat-drawer-content>
 </mat-drawer-container>
