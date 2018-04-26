@@ -32,11 +32,7 @@ import { isUndefined } from 'util';
     
   `,
   styles: [`
-    .mat-drawer-backdrop.mat-drawer-backdrop-shown{
-      /*background-color: transparent !important;*/
-      visibility: hidden !important;
 
-    }
     .rcpeCard {
       margin: 5px;
       width: fit-content;

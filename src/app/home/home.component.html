@@ -1,14 +1,17 @@
 <mat-drawer-container class='mainContainer'>
   <!-- sidenav content -->
   <mat-drawer class='recipeList' #rcpelist mode='over' position='end'>
-    <mat-nav-list class='text-center mt-3'>
+    <!--<mat-nav-list class='text-center mt-3'>-->
+    <mat-button-toggle-group vertical #group="matButtonToggleGroup">
       <input type='search' [(ngModel)]='searchText' placeholder='search here'>
       <amm-category
         *ngFor='let cat of categories | category: searchText'
+        class=''
         [catName]='cat'
       ></amm-category>
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
-    </mat-nav-list>
+    </mat-button-toggle-group>
+    <!--</mat-nav-list>-->
   </mat-drawer>
   <!-- sidenav end -->
   <!-- main page content -->

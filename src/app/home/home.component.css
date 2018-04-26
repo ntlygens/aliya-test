@@ -1,14 +1,24 @@
 .mainContainer {
   min-height: 100%;
-  height: 700px;
 }
 .recipeList {
   /*max-width: 60%;*/
   height: inherit;
 }
 
+.card-deck {
+  padding-right: 20%;
+}
+
+.mat-button-toggle-group {
+  /*display: inline-block !important;*/
+}
 .mat-drawer-backdrop.mat-drawer-shown{
   /*background-color: transparent !important;*/
   visibility: hidden !important;
-
 }
+.mat-button-toggle-label {
+  margin: 0.5rem 0;
+}
+
+
