@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { HeaderMenuData, HeaderMenuType } from './app.enum';
-import { HomeComponent } from './home/home.component';
-import { SalesComponent } from './sales/sales.component';
 
 export const MAIN_ROUTES: HeaderMenuData[] = [
-  { title: '', path: '', redirectTo: 'home', pathMatch: 'full' },
-  { title: 'home', path: '', component: HomeComponent, menuType: HeaderMenuType.NAVMENU },
-  { title: 'sales', path: 'sales', component: SalesComponent, menuType: HeaderMenuType.NAVMENU }
+  { title: 'home', path: 'home', loadChildren: './home/home.module#HomeModule', menuType: HeaderMenuType.NAVMENU },
+  { title: 'sales', path: 'sales', loadChildren: './sales/sales.module#SalesModule', menuType: HeaderMenuType.NAVMENU },
+
+
+  /*{ title: 'home', path: '', component: HomeComponent, menuType: HeaderMenuType.NAVMENU },
+  { title: 'sales', path: 'sales', component: SalesComponent, menuType: HeaderMenuType.NAVMENU }*/
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(MAIN_ROUTES)],
+  imports: [RouterModule.forRoot(MAIN_ROUTES, {enableTracing: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

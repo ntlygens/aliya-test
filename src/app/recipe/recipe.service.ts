@@ -15,7 +15,12 @@ export class RecipeService {
   }
 
   getAllRecipes(): Observable<any> {
-    return this._http.get('../assets/all-recipes.json');
+    const allRecipes = this._http.get('../assets/all-recipes.json');
+    return allRecipes;
+  }
+
+  getCatRecipes(cat: string) {
+
   }
 
   sendDrawerState(isOpen: any) {

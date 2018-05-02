@@ -1,3 +1,14 @@
-<amm-header></amm-header>
+<mat-toolbar color='primary'>
+  <!--<button mat-button routerLinkActive='active' routerLink='{{menuBrand.path}}' (click)='setHome4QI(menuBrand.title)'><mat-icon>{{menuBrand.title}}</mat-icon></button>-->
+  <div *ngFor='let headerMenuItem of headerMenuItems'>
+    <button mat-button routerLinkActive='active' routerLink='{{headerMenuItem.path}}'>{{headerMenuItem.title}}</button>
+  </div>
+  <span class='my-spacer'></span>
+  <div class='align-content-end'>
+    <a href='#' class=''><mat-icon class=''>list</mat-icon></a>
+    <a href='#' class=''(click)='addRecipe()' ><mat-icon class=''>add</mat-icon></a>
+    <a href='#' class='' (click)='showSideBar()'><mat-icon>menu</mat-icon></a>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>
-
+<span>current build: {{version.full}}</span>

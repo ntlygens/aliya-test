@@ -6,6 +6,13 @@
   height: inherit;
 }
 
+.cat-card {
+  max-width: 400px;
+  margin: 2%;
+  padding-top: 5%;
+  text-align: left;
+}
+
 .card-deck {
   padding-right: 20%;
 }
@@ -19,6 +26,15 @@
 }
 .mat-button-toggle-label {
   margin: 0.5rem 0;
+}
+
+.mat-button-toggle-checked {
+  padding: 9% 0 11%;
+  background-color: burlywood;
+}
+
+.mat-divider.mat-divider-inset {
+  margin: 0 5% !important;
 }
 
 

@@ -7,6 +7,7 @@ export enum HeaderMenuType {
 export interface HeaderMenuData {
   title?: string;
   redirectTo?: string;
+  loadChildren?: string;
   pathMatch?: string;
   path: string;
   component?: any;

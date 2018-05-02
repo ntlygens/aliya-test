@@ -2,20 +2,26 @@
   <!-- sidenav content -->
   <mat-drawer class='recipeList' #rcpelist mode='over' position='end'>
     <!--<mat-nav-list class='text-center mt-3'>-->
-    <mat-button-toggle-group vertical #group="matButtonToggleGroup">
+    <div class='d-flex flex-column'>
       <input type='search' [(ngModel)]='searchText' placeholder='search here'>
       <amm-category
         *ngFor='let cat of categories | category: searchText'
-        class=''
         [catName]='cat'
+        color='primary'
+        class='mat-raised-button cat-card'
+        (click)='getDValue(cat); $event.preventDefault()'
+        routerLinkActive='active'
+        routerLink='category/{{cat.toLowerCase()}}'
       ></amm-category>
+      <!--<span>value: {{group.value}}</span>-->
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
-    </mat-button-toggle-group>
+    </div>
     <!--</mat-nav-list>-->
   </mat-drawer>
   <!-- sidenav end -->
   <!-- main page content -->
   <mat-drawer-content class='card-deck'>
+    <router-outlet></router-outlet><router-outlet name='other' ></router-outlet>
     <amm-recipe
         style='max-width: 200px'
         [ngClass]=''

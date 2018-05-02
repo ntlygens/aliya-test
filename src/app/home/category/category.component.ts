@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HomeRoutingModule } from '../home-routing.module';
+
 
 @Component({
   selector: 'amm-category',
@@ -13,14 +15,22 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
     <!--<mat-button-toggle-group #group="matButtonToggleGroup">-->
-      <mat-button-toggle class='cat-card' value="{{catName}}">
+    <!--<div class='btn btn-default cat-card' href='#' (click)='$event.preventDefault()' routerLinkActive='active' routerLink='category/{{catName.toLowerCase()}}' >-->
+      <div mat-card-avatar class="cat-image"></div>
+      <span class='cardDesc'>
+        <mat-card-title [id]='catName' class=''>{{catName}}</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <!--<mat-icon>star</mat-icon>-->
+      </span>  
+    <!--</div>-->
+      <!--<mat-button-toggle [value]='catName' class='cat-card'>
         <div mat-card-avatar class="cat-image"></div>
         <span class='cardDesc'>
-          <mat-card-title class=''>{{catName}}</mat-card-title>
+          <mat-card-title [id]='catName' class=''>{{catName}}</mat-card-title>
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          <!--<mat-icon>star</mat-icon>-->
+          &lt;!&ndash;<mat-icon>star</mat-icon>&ndash;&gt;
         </span>
-      </mat-button-toggle>
+      </mat-button-toggle>-->
     <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
       <!--<mat-button-toggle value="center">
         <mat-icon>format_align_center</mat-icon>
@@ -34,10 +44,10 @@ import { Component, OnInit, Input } from '@angular/core';
     <!--</mat-button-toggle-group>-->
   `,
   styles: [`
-    .cat-card {
+    /*.cat-card {
       max-width: 400px;
-      margin: 5% 5% 10%;
-    }
+      margin: 3%;
+    }*/
 
     .cat-image {
       background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -77,6 +87,11 @@ export class CategoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showCategory() {
+    // const t = e.target;
+    console.log('event: ' );
   }
 
 }
