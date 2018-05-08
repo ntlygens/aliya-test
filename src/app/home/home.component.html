@@ -11,7 +11,7 @@
         class='mat-raised-button cat-card'
         (click)='getDValue(cat); $event.preventDefault()'
         routerLinkActive='active'
-        routerLink='category/{{cat.toLowerCase()}}'
+        routerLink='{{cat.toLowerCase()}}'
       ></amm-category>
       <!--<span>value: {{group.value}}</span>-->
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
@@ -21,16 +21,16 @@
   <!-- sidenav end -->
   <!-- main page content -->
   <mat-drawer-content class='card-deck'>
-    <router-outlet></router-outlet><router-outlet name='other' ></router-outlet>
-    <amm-recipe
+    <router-outlet name='mainRO'></router-outlet><router-outlet name='detailRO'></router-outlet>
+    <!--<amm-recipe
         style='max-width: 200px'
         [ngClass]=''
         *ngFor='let recipe of recipes; let idx=index;'
         [rcpeTitle]='recipe.title'
         [rcpeImg]='recipe.img'
         [rcpeDesc]='recipe.desc'
-        [rcpeCat]='recipe.rcpCategory'
-      ></amm-recipe>
+        [rcpeCat]='recipe.rcpcategory'
+      ></amm-recipe>-->
     <button class='btn' (click)='rcpelist.toggle()'>submitt</button>
   </mat-drawer-content>
 </mat-drawer-container>

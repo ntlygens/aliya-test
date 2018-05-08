@@ -11,6 +11,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CategoryComponent } from './category/category.component';
 import { PuttestComponent } from './puttest/puttest.component';
+// import { RecipeContainerComponent } from '../recipe/recipe-container.component';
 
 @NgModule({
   imports: [

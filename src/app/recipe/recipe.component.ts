@@ -26,7 +26,7 @@ import { isUndefined } from 'util';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <button mat-button routerLinkActive='active' routerLink='{{rcpeId}}'>{{rcpeId}}</button>
       </mat-card-actions>
     </mat-card>
     
@@ -51,6 +51,7 @@ export class RecipeComponent implements OnInit {
   @Input() rcpeImg: string;
   @Input() rcpeDesc: string;
   @Input() rcpeCat: any;
+  @Input() rcpeId: any;
   // @Input() rcpeLike: string;
   // @Input() rcpeShare: string;
 
@@ -62,10 +63,10 @@ export class RecipeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hasImage = !isUndefined(this.rcpeImg);
+    this.hasImage = ( !isUndefined(this.rcpeImg) && (this.rcpeImg !== '') );
     this.hasDesc = !isUndefined(this.rcpeDesc);
     this.hasTitle = !isUndefined(this.rcpeTitle);
-    console.log('hasImg: ' + this.hasImage + ' rcpeImg: ' + this.rcpeImg);
+    console.log('hasImg: ' + this.hasImage + '\n rcpeImg: ' + this.rcpeImg + '\n ID: ' + this.rcpeId);
   }
 
 }

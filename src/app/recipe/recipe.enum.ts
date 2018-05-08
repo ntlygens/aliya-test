@@ -14,8 +14,9 @@ export enum RecipeCategory {
 }
 
 export interface RecipeFormData {
-  title: string;
-  rcpCategory: RecipeCategory;
+  title?: string;
+  rcpID: string;
+  rcpcategory: RecipeCategory;
   image?: string;
-  desc: string;
+  desc?: string;
 }

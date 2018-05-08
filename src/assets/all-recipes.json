@@ -1,7 +1,7 @@
 [
-  {"title": "temp-1", "rcpCategory": "BREAKFAST", "image": "assets/imgs/placeholder.png", "desc": "desc-1"},
-  {"title": "temp-2", "rcpCategory": "LUNCH", "image": "", "desc": "desc-2"},
-  {"title": "temp-3", "rcpCategory": "LUNCH", "image": "", "desc": "desc-3"},
-  {"title": "temp-4", "rcpCategory": "DINNER", "image": "", "desc": "desc-4"}
+  {"title": "temp-1", "rcpID": "001", "rcpcategory": "BREAKFAST", "image": "assets/chefs-hat.png", "desc": "desc-1"},
+  {"title": "temp-2", "rcpID": "002", "rcpcategory": "LUNCH", "image": "", "desc": "desc-2"},
+  {"title": "temp-3", "rcpID": "003", "rcpcategory": "LUNCH", "image": "", "desc": "desc-3"},
+  {"title": "temp-4", "rcpID": "004", "rcpcategory": "DINNER", "image": "", "desc": "desc-4"}
 
 ]

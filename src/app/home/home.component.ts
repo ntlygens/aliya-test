@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private rcpeSvc: RecipeService, private homeSvc: HomeService) {
     this.categories = this.homeSvc.getAllCategories();
-    console.log('lg: ' + this.homeSvc.getAllCategories());
+    // console.log('lg: ' + this.homeSvc.getAllCategories());
     // console.log('cats: ' + JSON.stringify(RecipeCategory));
   }
 
@@ -31,10 +31,10 @@ export class HomeComponent implements OnInit {
     this.rcpeSvc.sendDrawerState( {'state': 'open'});
     // this.categories = this.homeSvc.getAllCategories();
     // this.recipes = this.rcpeSvc.getAllRecipes().subscribe( res => res );
-    this.rcpeSvc.getAllRecipes().subscribe(res => {
+    /*this.rcpeSvc.getAllRecipes().subscribe(res => {
       console.log('res: ' + res[1].title);
       this.recipes = res;
-    });
+    });*/
 
   }
 
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     // console.log('rec: ' + JSON.stringify(this.recipes) + ' - ' + val);
     this.rcpeSvc.getAllRecipes().subscribe(res => {
       console.log('res: ' + res[1].title);
-      const allRecipes = res.filter(dRte => dRte.rcpCategory === val);
+      const allRecipes = res.filter(dRte => dRte.rcpcategory === val);
       this.recipes = allRecipes;
     });
     /*const recCat =
