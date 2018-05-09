@@ -6,9 +6,6 @@ export const MAIN_ROUTES: HeaderMenuData[] = [
   { title: 'home', path: 'home', loadChildren: './home/home.module#HomeModule', menuType: HeaderMenuType.NAVMENU },
   { title: 'sales', path: 'sales', loadChildren: './sales/sales.module#SalesModule', menuType: HeaderMenuType.NAVMENU },
 
-
-  /*{ title: 'home', path: '', component: HomeComponent, menuType: HeaderMenuType.NAVMENU },
-  { title: 'sales', path: 'sales', component: SalesComponent, menuType: HeaderMenuType.NAVMENU }*/
 ];
 
 @NgModule({
