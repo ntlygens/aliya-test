@@ -26,7 +26,7 @@ import { isUndefined } from 'util';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button routerLinkActive='active' routerLink='{{rcpeId}}'>{{rcpeId}}</button>
+        <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
     

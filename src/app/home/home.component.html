@@ -11,8 +11,8 @@
         class='mat-raised-button cat-card'
         (click)='getDValue(cat); $event.preventDefault()'
         routerLinkActive='active'
-        routerLink='{{cat.toLowerCase()}}'
       ></amm-category>
+      <!--routerLink='[{{cat.toLowerCase()}}, {outlets: {mainRO: [{{cat.toLowerCase()}}], detailRO: [{{cat.toLowerCase()}}/:id]'-->
       <!--<span>value: {{group.value}}</span>-->
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->
     </div>
@@ -21,7 +21,11 @@
   <!-- sidenav end -->
   <!-- main page content -->
   <mat-drawer-content class='card-deck'>
-    <router-outlet name='mainRO'></router-outlet><router-outlet name='detailRO'></router-outlet>
+    <div class='d-flex flex-row'><mat-card><router-outlet name='mainRO'>[mainRO]</router-outlet></mat-card><mat-card><router-outlet name='detailRO'>[detailRO]</router-outlet></mat-card></div>
+    <!--<div [hidden]='!showOutlet'>[detail]
+      <router-outlet name='detailRO' (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+    </div>-->
+
     <!--<amm-recipe
         style='max-width: 200px'
         [ngClass]=''

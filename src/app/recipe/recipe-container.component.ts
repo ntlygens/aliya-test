@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RecipeService } from './recipe.service';
 import { RecipeCategory } from './recipe.enum';
 
@@ -14,10 +15,12 @@ import { RecipeCategory } from './recipe.enum';
       [rcpeCat]='recipe.rcpcategory'
       [rcpeImg]='recipe.image'
       [rcpeDesc]='recipe.desc'
+      routerLinkActive='active'
+      [routerLink]='recipe.rcpID'
     ></amm-recipe>
-    <div>
+    <div style='background-color: green'>
       recipe-container works!
-      <!--<router-outlet></router-outlet>-->
+      <router-outlet name='rcpDetail'>[three]</router-outlet>
     </div>
     
   `,

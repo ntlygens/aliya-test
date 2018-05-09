@@ -9,8 +9,8 @@ import { HandlerModule } from './handler/handler.module';
 // import { HeaderModule } from './header/header.module';
 import { IngredientModule } from './ingredient/ingredient.module';
 
-// import { HomeModule } from './home/home.module';
-// import { SalesModule } from './sales/sales.module';
+import { HomeModule } from './home/home.module';
+import { SalesModule } from './sales/sales.module';
 
 import { AppComponent } from './app.component';
 
@@ -27,8 +27,8 @@ import { AppComponent } from './app.component';
     HandlerModule,
     // HeaderModule,
     IngredientModule,
-    // HomeModule,
-    // SalesModule
+    HomeModule,
+    SalesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
