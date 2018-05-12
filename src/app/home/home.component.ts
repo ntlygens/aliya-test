@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation, Pipe } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ViewEncapsulation, Pipe } from '@angular/core';
 import { RecipeService } from '../recipe/recipe.service';
 import { HomeService } from './home.service';
 import { RecipeCategory } from '../recipe/recipe.enum';
 import { Observable } from 'rxjs/Observable';
 import { MatButtonToggleGroup } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'amm-home',
@@ -14,17 +14,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('rcpelist') rcpelist: any;
   @ViewChild('group') toggleGroup: MatButtonToggleGroup;
   recipes = [];
   categories = [];
   crntCat: any;
 
-  constructor(private rcpeSvc: RecipeService, private homeSvc: HomeService, private route: ActivatedRoute) {
+  constructor(private rcpeSvc: RecipeService, private homeSvc: HomeService, private actvdRte: ActivatedRoute, private rte: Router) {
     this.categories = this.homeSvc.getAllCategories();
     console.log('lg: ' + this.homeSvc.getAllCategories());
     // console.log('cats: ' + JSON.stringify(RecipeCategory));
+    this.actvdRte.paramMap.subscribe( params => {
+      console.log('params: ' + JSON.stringify(params));
+    });
   }
 
   ngOnInit() {
@@ -54,6 +57,11 @@ export class HomeComponent implements OnInit {
         break;
     }
   }*/
+  ngOnDestroy() {
+    /*this.actvdRte.paramMap.subscribe( params => {
+      console.log('params: ' + JSON.stringify(params));
+    });*/
+  }
 
   getDValue(val: string) {
     // console.log('rec: ' + JSON.stringify(this.recipes) + ' - ' + val);
@@ -63,9 +71,8 @@ export class HomeComponent implements OnInit {
       this.recipes = allRecipes;
     });
 
-    this.route.paramMap.subscribe( params => {
-      console.log('params: ' + JSON.stringify(params));
-    });
+    this.rte.navigate(['home/' + val.toLowerCase()]);
+    // this.rte.navigate(['home/' + val.toLowerCase(), { outlets: {'mainRO': 'home/' + val.toLowerCase(), 'detailRO': 'home/' + val.toLowerCase()} }]);
     /*const recCat =
     console.log('recCat: ' + JSON.stringify(recCat));
     this.recipes = recCat;*/

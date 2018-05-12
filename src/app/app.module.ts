@@ -13,10 +13,12 @@ import { IngredientModule } from './ingredient/ingredient.module';
 // import { SalesModule } from './sales/sales.module';
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

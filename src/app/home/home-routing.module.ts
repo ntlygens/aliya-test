@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 import { PuttestComponent } from './puttest/puttest.component';
 import { RecipeDetailComponent } from '../recipe/recipe-detail/recipe-detail.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
@@ -20,9 +20,50 @@ const routes: Routes = [
         component: RecipeDetailComponent,
         outlet: 'detailRO'
       }
+
+    ]
+  },
+  {
+    path: ':id',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        component: PuttestComponent,
+        outlet: 'mainRO'
+      },
+
+      {
+        path: '',
+        component: RecipeDetailComponent,
+        outlet: 'detailRO'
+      },
     ]
   }
 ];
+
+/*export const cat_routes: Routes = [
+
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        component: PuttestComponent,
+        outlet: 'mainRO'
+      },
+      {
+        path: '',
+        component: RecipeDetailComponent,
+        outlet: 'detailRO'
+      },
+
+    ]
+  }
+
+
+];*/
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

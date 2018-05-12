@@ -1,6 +1,7 @@
 export enum HeaderMenuType {
   BRAND,
   NAVMENU,
+  CATMENU,
   SEARCH
 }
 
