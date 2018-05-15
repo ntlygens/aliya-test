@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { isUndefined } from 'util';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecipeFormData } from './recipe.enum';
+import { RecipeService } from './recipe.service';
 
 @Component({
   selector: 'amm-recipe',
@@ -26,7 +29,7 @@ import { isUndefined } from 'util';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID, { outlets: {'detailRO': 'ingredients'}}]">SHARE</button>
       </mat-card-actions>
     </mat-card>
     
@@ -51,13 +54,24 @@ export class RecipeComponent implements OnInit {
   @Input() rcpeImg: string;
   @Input() rcpeDesc: string;
   @Input() rcpeCat: any;
+  @Input() rcpeID: string;
   // @Input() rcpeLike: string;
   // @Input() rcpeShare: string;
 
   hasImage: boolean;
   hasDesc: boolean;
   hasTitle: boolean;
-  constructor() {
+  dRecipes: RecipeFormData;
+  constructor(
+    private route: ActivatedRoute,
+    private rte: Router,
+    // private dRecipes: RecipeFormData,
+    private rcpService: RecipeService
+  ) {
+      this.route.paramMap.subscribe(params => {
+        // this.dRecipes = this.rcpService.getCatRecipes(params['id']);
+        console.log('dMmry: ' + params['params']['id']);
+      });
 
   }
 
@@ -65,7 +79,9 @@ export class RecipeComponent implements OnInit {
     this.hasImage = !isUndefined(this.rcpeImg);
     this.hasDesc = !isUndefined(this.rcpeDesc);
     this.hasTitle = !isUndefined(this.rcpeTitle);
-    console.log('hasImg: ' + this.hasImage + ' rcpeImg: ' + this.rcpeImg);
+    // console.log('hasImg: ' + this.hasImage + ' rcpeImg: ' + this.rcpeImg);
+
+
   }
 
 }

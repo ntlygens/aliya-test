@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { PuttestComponent } from './puttest/puttest.component';
+import { RecipeContainerComponent } from '../recipe/recipe-container/recipe-container.component';
 import { RecipeDetailComponent } from '../recipe/recipe-detail/recipe-detail.component';
 
 export const routes: Routes = [
@@ -11,14 +11,8 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: PuttestComponent,
+        component: RecipeContainerComponent,
         outlet: 'mainRO'
-      },
-
-      {
-        path: '',
-        component: RecipeDetailComponent,
-        outlet: 'detailRO'
       }
 
     ]
@@ -28,13 +22,33 @@ export const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: '',
-        component: PuttestComponent,
-        outlet: 'mainRO'
+        path: 'recipes',
+        component: RecipeContainerComponent,
+        outlet: 'mainRO',
+        // children: [
+        //   {
+        //     path: ':id/ingredients',
+        //     component: RecipeDetailComponent,
+        //     outlet: 'detailRO'
+        //   }
+        // ]
       },
-
       {
-        path: '',
+        path: 'detail',
+        component: RecipeDetailComponent,
+        outlet: 'detailRO'
+      }
+    ]
+  },
+  {
+    path: ':id/:id',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'recipes', component: RecipeContainerComponent, outlet: 'mainRO',
+      },
+      {
+        path: 'detail',
         component: RecipeDetailComponent,
         outlet: 'detailRO'
       },
@@ -50,7 +64,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: PuttestComponent,
+        component: RecipeContainerComponent,
         outlet: 'mainRO'
       },
       {

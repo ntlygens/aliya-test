@@ -10,7 +10,6 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { HomeComponent } from './home.component';
 import { CategoryComponent } from './category/category.component';
-import { PuttestComponent } from './puttest/puttest.component';
 
 @NgModule({
   imports: [
@@ -21,7 +20,11 @@ import { PuttestComponent } from './puttest/puttest.component';
     RecipeModule
   ],
   providers: [RecipeService],
-  declarations: [HomeComponent, CategoryComponent, CategoryPipe, PuttestComponent],
+  declarations: [
+    HomeComponent,
+    CategoryComponent,
+    CategoryPipe
+  ],
   exports: [HomeComponent]
 })
 export class HomeModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'amm-recipe-detail',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  constructor() { }
+  ingredients;
+  constructor(
+    private route: ActivatedRoute,
+    private rte: Router
+  ) {
+      this.route.paramMap.subscribe( params => {
+        console.log('prms: ' + params['params']['id']);
+        this.ingredients = params['params']['id'];
+      });
+
+
+  }
 
   ngOnInit() {
   }

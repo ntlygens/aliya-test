@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material';
 
 @Injectable()
 export class RecipeService {
+  recipes = []; catRecipes: any;
   isDrawerOpen$: Observable<any>;
   private selectedDrawerState = new BehaviorSubject<any>({state: true});
   sidenav: MatSidenav;
@@ -20,7 +21,17 @@ export class RecipeService {
   }
 
   getCatRecipes(cat: string) {
+    // const allRecipes = this._http.get('../assets/all-recipes.json');
+    this.catRecipes = this.getAllRecipes().subscribe(res => {
+      console.log('resp: ' + res[1].title);
+      const allRecipes = res.filter(dRte => dRte.rcpCategory === cat);
+      console.log('slctd Rcps: ' + allRecipes);
+      this.recipes = allRecipes;
+    });
 
+    // const catRecipes = this.getAllRecipes().subscribe(res => { catRecipes = res.filter(dRte => dRte.rcpCategory === cat) });
+    console.log('ll: ' + this.catRecipes);
+    return this.catRecipes;
   }
 
   sendDrawerState(isOpen: any) {

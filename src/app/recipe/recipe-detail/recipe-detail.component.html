@@ -1,3 +1,7 @@
-<p>
-  recipe-detail works!
+<p *ngIf='!ingredients'>
+  recipe-detail not ingredients!
+</p>
+
+<p *ngIf='ingredients'>
+  recipe-detail works! - {{ingredients}}
 </p>
