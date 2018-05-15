@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { RecipeContainerComponent } from '../recipe/recipe-container/recipe-container.component';
 import { RecipeDetailComponent } from '../recipe/recipe-detail/recipe-detail.component';
+import { RecipeComponent } from '../recipe/recipe.component';
 
 export const routes: Routes = [
   {
@@ -22,19 +23,12 @@ export const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'recipes',
+        path: '',
         component: RecipeContainerComponent,
         outlet: 'mainRO',
-        // children: [
-        //   {
-        //     path: ':id/ingredients',
-        //     component: RecipeDetailComponent,
-        //     outlet: 'detailRO'
-        //   }
-        // ]
       },
       {
-        path: 'detail',
+        path: '',
         component: RecipeDetailComponent,
         outlet: 'detailRO'
       }
@@ -45,10 +39,10 @@ export const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'recipes', component: RecipeContainerComponent, outlet: 'mainRO',
+        path: '', component: RecipeContainerComponent, outlet: 'mainRO',
       },
       {
-        path: 'detail',
+        path: '',
         component: RecipeDetailComponent,
         outlet: 'detailRO'
       },

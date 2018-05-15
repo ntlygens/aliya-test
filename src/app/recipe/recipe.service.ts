@@ -30,7 +30,7 @@ export class RecipeService {
     });
 
     // const catRecipes = this.getAllRecipes().subscribe(res => { catRecipes = res.filter(dRte => dRte.rcpCategory === cat) });
-    console.log('ll: ' + this.catRecipes);
+    // console.log('ll: ' + this.catRecipes);
     return this.catRecipes;
   }
 
