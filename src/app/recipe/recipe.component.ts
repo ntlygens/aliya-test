@@ -28,7 +28,7 @@ import { RecipeService } from './recipe.service';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID]">SHARE</button>
+        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID, { outlets: {'mainRO': ['recipe']}}]">SHARE</button>
       </mat-card-actions>
     </mat-card>
     

@@ -73,7 +73,7 @@ export class RecipeContainerComponent implements OnInit {
     this.rcpeSvc.getAllRecipes().subscribe( res => {
       const allRecipes = res.filter( dRoute => dRoute.rcpCategory !== 'ALL');
       this.recipes = allRecipes;
-      // console.log('default');
+      console.log('no selection made - showing all ');
     });
 
   }
