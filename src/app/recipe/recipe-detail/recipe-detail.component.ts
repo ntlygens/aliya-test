@@ -8,15 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  ingredients: any;
+  rcpDetail: any;
   constructor(
     private route: ActivatedRoute,
     private rte: Router
   ) {
       this.route.paramMap.subscribe( params => {
         // console.log('prms: ' + params['params']['id']);
-        this.ingredients = params['params']['id'];
-        console.log('ingrd ' + this.ingredients);
+        this.rcpDetail = params['params']['id'];
+        console.log('ingrd ' + this.rcpDetail);
       });
 
 

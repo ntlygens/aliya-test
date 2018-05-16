@@ -27,20 +27,20 @@ export const routes: Routes = [
         component: RecipeContainerComponent,
         outlet: 'mainRO',
       },
-      {
-        path: '',
+      /*{
+        path: ':id',
         component: RecipeDetailComponent,
         outlet: 'detailRO'
-      }
+      }*/
     ]
   },
   {
     path: ':id/:id',
     component: HomeComponent,
     children: [
-      {
+      /*{
         path: '', component: RecipeContainerComponent, outlet: 'mainRO',
-      },
+      },*/
       {
         path: '',
         component: RecipeDetailComponent,

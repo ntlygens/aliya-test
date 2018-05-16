@@ -28,7 +28,7 @@ import { RecipeService } from './recipe.service';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID, { outlets: {'mainRO': 'recipes', 'detailRO': rcpeID}}]">SHARE</button>
+        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID]">SHARE</button>
       </mat-card-actions>
     </mat-card>
     
@@ -61,6 +61,7 @@ export class RecipeComponent implements OnInit {
   hasDesc: boolean;
   hasTitle: boolean;
   dRecipes: RecipeFormData;
+  slctdRecipe: any;
   constructor(
     private route: ActivatedRoute,
     private rte: Router,
@@ -70,6 +71,8 @@ export class RecipeComponent implements OnInit {
       this.route.paramMap.subscribe(params => {
         // this.dRecipes = this.rcpService.getCatRecipes(params['id']);
         // console.log('dMmry: ' + params['params']['id']);
+        this.slctdRecipe = params['params']['id'];
+        console.log('from Rcp Comp ' + this.slctdRecipe);
       });
 
   }

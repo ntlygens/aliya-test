@@ -1,5 +1,6 @@
 .mainContainer {
   min-height: 100%;
+  height: 600px;
 }
 .recipeList {
   /*max-width: 60%;*/
