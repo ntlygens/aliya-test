@@ -39,7 +39,7 @@ export const routes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'recipe',
+        path: ':id',
         component: RecipeContainerComponent,
         outlet: 'mainRO'
       },
