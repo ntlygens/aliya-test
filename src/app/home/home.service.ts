@@ -20,6 +20,19 @@ export class HomeService {
     return this.isObservable$;
   }
 
+  getFirstCategory() {
+    const tempCat = [];
+    Object.keys(RecipeCategory)
+      .forEach((key, i) => {
+        if ( i % 2 === 0 ) {
+          // console.log( 'key: ' + key );
+          // return key;
+          tempCat.push(key);
+        }
+      });
+    return tempCat[0];
+  }
+
   getAllCategories() {
     const tempCats = [];
     Object.keys(RecipeCategory)

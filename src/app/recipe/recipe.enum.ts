@@ -1,5 +1,4 @@
 export enum RecipeCategory {
-  ALL = <any>'all',
   BREAKFAST = <any>'breakfast',
   LUNCH = <any>'lunch',
   DINNER = <any>'dinner',

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
+import { HomeService } from '../../home/home.service';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute, Router} from '@angular/router';
+import { RecipeCategory } from '../recipe.enum';
 import { isUndefined } from 'util';
 
 @Component({
@@ -24,7 +26,7 @@ import { isUndefined } from 'util';
 export class RecipeContainerComponent implements OnInit {
 
   recipes = [];
-  constructor(private route: ActivatedRoute, private rte: Router, private rcpeSvc: RecipeService) {
+  constructor(private route: ActivatedRoute, private rte: Router, private rcpeSvc: RecipeService, private homeSrvc: HomeService) {
     this.route.paramMap.subscribe( dRte => {
       console.log('rc-comp: ' + dRte['params']['id']);
       /*console.log('rcN: ' + JSON.stringify(dRte));
@@ -70,8 +72,11 @@ export class RecipeContainerComponent implements OnInit {
   }
 
   noSubmittedRte() {
+
+    const cat = this.homeSrvc.getFirstCategory();
+    // console.log('rfc: ' + cat);
     this.rcpeSvc.getAllRecipes().subscribe( res => {
-      const allRecipes = res.filter( dRoute => dRoute.rcpCategory !== 'ALL');
+      const allRecipes = res.filter( dRoute => dRoute.rcpCategory === cat);
       this.recipes = allRecipes;
       console.log('no selection made - showing all ');
     });
