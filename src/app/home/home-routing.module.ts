@@ -44,7 +44,7 @@ export const routes: Routes = [
         outlet: 'mainRO'
       },
       {
-        path: '',
+        path: ':id',
         component: RecipeDetailComponent,
         outlet: 'detailRO'
       },
