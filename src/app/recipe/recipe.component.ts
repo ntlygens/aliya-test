@@ -28,7 +28,7 @@ import { RecipeService } from './recipe.service';
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
-        <button mat-button routerLinkActive='active' [routerLink]="[rcpeID, { outlets: {'mainRO': [rcpeCat.toLowerCase()]}}]">SHARE</button>
+        <button mat-button routerLinkActive='active' (click)='getDetails(); $event.preventDefault()' >SHARE</button>
       </mat-card-actions>
     </mat-card>
     
@@ -69,8 +69,6 @@ export class RecipeComponent implements OnInit {
     private rcpService: RecipeService
   ) {
       this.route.paramMap.subscribe(params => {
-        // this.dRecipes = this.rcpService.getCatRecipes(params['id']);
-        // console.log('dMmry: ' + params['params']['id']);
         this.slctdRecipe = params['params']['id'];
         console.log('from Rcp Comp ' + this.slctdRecipe);
       });
@@ -84,6 +82,10 @@ export class RecipeComponent implements OnInit {
     console.log(this.rcpeID + ' hasAnImg ?= ' + this.hasImage + ' image-name: ' + this.rcpeImg);
 
 
+  }
+
+  getDetails() {
+    this.rte.navigate(['home/' + this.rcpeCat.toLowerCase() + '/' + this.rcpeID, { outlets: {'mainRO': [this.rcpeCat.toLowerCase()], 'detailRO': [this.rcpeID]}}]);
   }
 
 }

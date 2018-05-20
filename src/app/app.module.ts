@@ -7,6 +7,7 @@ import { NgMatModule } from './ngmat/ng-mat.module';
 import { HandlerModule } from './handler/handler.module';
 
 // import { HeaderModule } from './header/header.module';
+// import { DataFormsModule } from './forms/data-forms.module';
 import { IngredientModule } from './ingredient/ingredient.module';
 
 // import { HomeModule } from './home/home.module';
@@ -14,6 +15,7 @@ import { IngredientModule } from './ingredient/ingredient.module';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppRoutingModule,
     NgMatModule,
     HandlerModule,
+    // DataFormsModule,
     // HeaderModule,
     IngredientModule,
     // HomeModule,

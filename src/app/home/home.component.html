@@ -3,15 +3,37 @@
   <mat-drawer class='recipeList' #rcpelist mode='over' position='end'>
     <!--<mat-nav-list class='text-center mt-3'>-->
     <div class='d-flex flex-column'>
+      <!--<div class='d-flex flex-row'>
+        <button mat-raised-button>
+          <mat-icon>list</mat-icon>
+        </button>
+        <button mat-raised-button>
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-raised-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>-->
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="list">
+          <mat-icon>list</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle (change)='addRecipe(group.value); $event.preventDefault;' value="add">
+          <mat-icon>add</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="menu" disabled>
+          <mat-icon>menu</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
       <input type='search' [(ngModel)]='searchText' placeholder='search here'>
+      <!--<div class=''>{{group.value}}</div>-->
       <amm-category
         *ngFor='let cat of categories | category: searchText'
         [catName]='cat'
         color='primary'
         class='mat-raised-button cat-card'
-        (click)='getDValue(cat); $event.preventDefault()'
+        (click)='getDValue(cat); $event.preventDefault'
         routerLinkActive='active'
-
       ></amm-category>
       <!--<span>value: {{group.value}}</span>-->
       <!--<a mat-list-item *ngFor='let recipe of recipes' routerLinkActive='active' routerLink="{{recipe.path}}">{{recipe}}</a>-->

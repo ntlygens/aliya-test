@@ -7,6 +7,7 @@ import { MatSidenav } from '@angular/material';
 @Injectable()
 export class RecipeService {
   recipes = []; catRecipes: any;
+  allDRecipes = [];
   isDrawerOpen$: Observable<any>;
   private selectedDrawerState = new BehaviorSubject<any>({state: true});
   sidenav: MatSidenav;
@@ -20,12 +21,12 @@ export class RecipeService {
     return allRecipes;
   }
 
-  getCatRecipes(cat: string) {
+  getRecipeDetail(rID: string): Observable<any> {
     // const allRecipes = this._http.get('../assets/all-recipes.json');
     this.catRecipes = this.getAllRecipes().subscribe(res => {
-      console.log('resp: ' + res[1].title);
-      const allRecipes = res.filter(dRte => dRte.rcpCategory === cat);
-      console.log('slctd Rcps: ' + allRecipes);
+      // console.log('resp: ' + res[1].title);
+      const allRecipes = res.filter(dRte => dRte.rcpCategory === rID);
+      // console.log('slctd Rcps: ' + allRecipes);
       this.recipes = allRecipes;
     });
 
@@ -46,6 +47,16 @@ export class RecipeService {
     return this.isDrawerOpen$;
   }
 
+  generateID() {
+    const x = 0, y = 9999;
+    const rand = Math.floor(x + (y - x) * Math.random());
+    return rand;
+  }
+
+  checkID(val: number) {
+
+  }
+
   public setSidenav(sidenav: MatSidenav) {
     this.sidenav = sidenav;
     this.sidenav.opened = true;
@@ -55,7 +66,6 @@ export class RecipeService {
   public open() {
     return this.sidenav.opened = true;
   }
-
 
   public close() {
     return this.sidenav.close();
