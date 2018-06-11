@@ -4,9 +4,25 @@
 }
 .recipeList {
   /*max-width: 60%;*/
+  top: 40px !important;
   height: inherit;
 }
+.catMenuBtns {
+  position: absolute !important;
+  top: 0px;
+  right: 0px;
+  z-index: auto;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  max-width: 222px;
+  min-width: 202px;
+  justify-content: space-between;
+}
 
+.catMenuBtns > button {
+  min-width: 60px;
+}
 .cat-card {
   max-width: 400px;
   margin: 2%;
@@ -15,7 +31,7 @@
 }
 
 .card-deck {
-  padding-right: 20%;
+  padding-right: calc(100% - 72%);
 }
 
 .mat-button-toggle-group {

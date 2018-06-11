@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   recipes = [];
   categories = [];
   crntCat: any;
-  formDialogRef: MatDialogRef<AddFormComponent>
+  formDialogRef: MatDialogRef<AddFormComponent>;
 
   constructor(
     private rcpeSvc: RecipeService,
@@ -67,9 +67,9 @@ export class HomeComponent implements OnInit {
    }
  }*/
 
-  addRecipe(val: string) {
+  addRecipe(val) {
     this.formDialogRef = this.dialog.open(AddFormComponent);
-    console.log('recipe ' + val);
+    console.log('recipe ' + val.getAttribute('value'));
 
   }
 

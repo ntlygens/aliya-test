@@ -14,17 +14,17 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>-->
-      <mat-button-toggle-group #group="matButtonToggleGroup">
-        <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="list">
+      <!--<mat-button-toggle-group class='catMenuBtns' #group="matButtonToggleGroup">
+        <mat-button-toggle (change)='rcpelist.toggle(); $event.preventDefault;' value="list">
           <mat-icon>list</mat-icon>
         </mat-button-toggle>
         <mat-button-toggle (change)='addRecipe(group.value); $event.preventDefault;' value="add">
           <mat-icon>add</mat-icon>
         </mat-button-toggle>
-        <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="menu" disabled>
+        <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="menu">
           <mat-icon>menu</mat-icon>
         </mat-button-toggle>
-      </mat-button-toggle-group>
+      </mat-button-toggle-group>-->
       <input type='search' [(ngModel)]='searchText' placeholder='search here'>
       <!--<div class=''>{{group.value}}</div>-->
       <amm-category
@@ -43,9 +43,27 @@
   <!-- sidenav end -->
   <!-- main page content -->
   <mat-drawer-content class='card-deck'>
+    <div class="btn-group" class='catMenuBtns' role="group" aria-label="Basic example">
+      <button mat-button (click)='rcpelist.toggle(); $event.preventDefault;' value='list'><mat-icon>list</mat-icon></button>
+      <button mat-button (click)='addRecipe($event.target); $event.preventDefault;' value='add'><mat-icon>add</mat-icon></button>
+      <button mat-button (click)='getClick($event); $event.preventDefault;' value='menu'><mat-icon>menu</mat-icon></button>
+
+
+    </div>
+    <!--<mat-button-toggle-group class='catMenuBtns' #group="matButtonToggleGroup">
+      <mat-button-toggle (change)='rcpelist.toggle(); getClick(group.value);' value="list">
+        <mat-icon>list</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle (change)='addRecipe(group.value); $event.preventDefault;' value="add">
+        <mat-icon>add</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle (change)='getClick(group.value); $event.preventDefault;' value="menu">
+        <mat-icon>menu</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>-->
     <router-outlet name='mainRO'></router-outlet><router-outlet name='detailRO' ></router-outlet>
 
-    <button class='btn' (click)='rcpelist.toggle()'>submitt</button>
+    <!--<button class='btn' (click)='rcpelist.toggle()'>submitt</button>-->
   </mat-drawer-content>
 </mat-drawer-container>
 

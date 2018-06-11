@@ -5,9 +5,9 @@
   </div>
   <span class='my-spacer'></span>
   <div class='align-content-end'>
-    <a href='#' class=''><mat-icon class=''>list</mat-icon></a>
-    <a href='#' class=''(click)='addRecipe()' ><mat-icon class=''>add</mat-icon></a>
-    <a href='#' class='' (click)='showSideBar()'><mat-icon>menu</mat-icon></a>
+    <a href='#' class=''><mat-icon class=''>shopping_cart</mat-icon></a>
+    <a href='#' class='' (click)='$event.preventDefault()'><mat-icon class=''>favorite</mat-icon></a>
+    <a href='#' class='' (click)='$event.preventDefault()'><mat-icon>share</mat-icon></a>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
