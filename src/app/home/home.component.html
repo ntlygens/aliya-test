@@ -47,8 +47,6 @@
       <button mat-button (click)='rcpelist.toggle(); $event.preventDefault;' value='list'><mat-icon>list</mat-icon></button>
       <button mat-button (click)='addRecipe($event.target); $event.preventDefault;' value='add'><mat-icon>add</mat-icon></button>
       <button mat-button (click)='getClick($event); $event.preventDefault;' value='menu'><mat-icon>menu</mat-icon></button>
-
-
     </div>
     <!--<mat-button-toggle-group class='catMenuBtns' #group="matButtonToggleGroup">
       <mat-button-toggle (change)='rcpelist.toggle(); getClick(group.value);' value="list">

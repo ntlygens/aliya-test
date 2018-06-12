@@ -27,8 +27,8 @@ import { RecipeService } from './recipe.service';
         <p *ngIf='!hasDesc'>Default Description. Your Description goes here.</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button routerLinkActive='active' (click)='getDetails(); $event.preventDefault()' >SHARE</button>
+        <button mat-button><mat-icon>favorite_border</mat-icon></button>
+        <button mat-button routerLinkActive='active' (click)='getDetails(); $event.preventDefault()' ><mat-icon>edit</mat-icon></button>
       </mat-card-actions>
     </mat-card>
     
@@ -37,13 +37,22 @@ import { RecipeService } from './recipe.service';
 
     .rcpeCard {
       margin: 5px;
-      width: fit-content;
+      width: 200px;
       float: left;
+      border: thin purple solid;
+      border-radius: 4px;
+    }
+    .rcpeCard > .mat-card-actions > .mat-button {
+      margin: 0;
+    }
+    .rcpeCard > .mat-card-actions {
+      padding-bottom: 8px;
     }
     .user-img {
-      width: 80px;
+      width: inherit;
       max-width: 100%;
       margin: auto;
+      padding: 10%;
     }
   `]
 })

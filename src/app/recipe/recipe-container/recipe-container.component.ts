@@ -20,7 +20,11 @@ import { isUndefined } from 'util';
       [rcpeID]='recipe.id'
     ></amm-recipe>
   `,
-  styles: [],
+  styles: [`
+    :host {
+      z-index: 5;
+    }
+  `],
   providers: [RecipeService]
 })
 export class RecipeContainerComponent implements OnInit {

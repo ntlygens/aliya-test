@@ -23,6 +23,9 @@
 .catMenuBtns > button {
   min-width: 60px;
 }
+.topRO {
+  z-index: 5;
+}
 .cat-card {
   max-width: 400px;
   margin: 2%;
